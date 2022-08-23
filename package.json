@@ -1,8 +1,8 @@
 {
   "name": "redux-slicer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
-    "@reduxjs/toolkit":"1.8"
+    "@reduxjs/toolkit": "1.8"
   },
   "description": "Generate redux slices, reducers, selectors, and thunks quickly",
   "main": "index.js",
