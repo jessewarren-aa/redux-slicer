@@ -1,0 +1,25 @@
+{
+  "name": "redux-slicer",
+  "version": "1.0.0",
+  "dependencies": {
+    "@reduxjs/toolkit":"1.8"
+  },
+  "description": "Generate redux slices, reducers, selectors, and thunks quickly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessewarren-aa/redux-slicer.git"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "https://www.linkedin.com/in/jesse--warren/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jessewarren-aa/redux-slicer/issues"
+  },
+  "homepage": "https://github.com/jessewarren-aa/redux-slicer#readme"
+}
