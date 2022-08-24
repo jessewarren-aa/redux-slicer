@@ -28,7 +28,7 @@ const generateSlice = (props) => {
       [`remove${name[0].toUpperCase() + name.substring(1)}`]:
         (state, action) => {
           if (action.payload.id !== `errors`) {
-            delete state[action.payload.key];
+            delete state[action.payload.id];
           }
         },
       // errorGeneric

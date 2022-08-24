@@ -45,18 +45,15 @@
   ```js
   import generateSlice from "redux-slicer"
 
-  export const messagesSlice = sliceGenerator({
+  export const messagesSlice = generateSlice({
     name: "messages",
-    // technically optional, defaults to 'generic'
-    secure: true,
-    // optional, defaults to true
-    url: "yourwebsite.com"
-    // optional, defaults to localhost:5000
+    secure: true, // optional, defaults to true
+    url: "yourwebsite.com" // optional, defaults to localhost:5000
   });
 
   export default configureStore({
     reducer: {
-      messages: messagesSlice,
+      messages: messagesSlice.reducer,
     },
   });
   ```
@@ -67,11 +64,9 @@
     name: "messages",
     initialState: { errors: [] },
     reducers: {
-      setMessages: [Function],
-      removeMessages: [Function],
-      errorMessages: [Function]
-      // All reducers take in state and action
-      // action = { payload: { ..., id } }
+      setMessages: [Function], // action = { payload: { ..., id } }
+      removeMessages: [Function], // action = { payload: {  id } }
+      errorMessages: [Function] // action = { payload: [ ... ] }
     },
     selectors: {
       selectErrors: [Function],
@@ -79,21 +74,12 @@
     },
     thunks: {
       // all references to headers are optional
-      getOneMessages: [Function],
-      // takes in thunkProps = { id, headers }
-      
-      getAllMessages: [Function],
-      // takes in thunkProps = { headers }
-      // if success, expects { data: [...] }
-      
-      createMessages: [Function],
-      // takes in thunkProps = { body, headers }
-      
-      updateMessages: [Function],
-      // takes in thunkProps = { body: { ..., id }, headers }
-      
-      destroyMessages: [Function]
-      // takes in thunkProps = { id, headers }
+      getOneMessages: [Function], // thunkProps = { id, headers }
+      getAllMessages: [Function], // thunkProps = { headers }
+      // backend success should return { data: [...] }
+      createMessages: [Function], // thunkProps = { body, headers }
+      updateMessages: [Function], // thunkProps = { body: { ..., id }, headers }
+      destroyMessages: [Function] // thunkProps = { id, headers }
     }
   }
   ```
