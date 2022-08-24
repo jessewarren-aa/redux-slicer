@@ -49,25 +49,20 @@
     name: "messages",
     secure: true, // optional, defaults to true
     url: "yourwebsite.com" // optional, defaults to localhost:5000
-  });
+  })
 
+  // import { configureStore } from '@reduxjs/toolkit'
   export default configureStore({
     reducer: {
       messages: messagesSlice.reducer,
     },
-  });
+  })
   ```
   
   * generateSlice object
   ```js
   newSlice = {
-    name: "messages",
-    initialState: { errors: [] },
-    reducers: {
-      setMessages: [Function], // action = { payload: { ..., id } }
-      removeMessages: [Function], // action = { payload: {  id } }
-      errorMessages: [Function] // action = { payload: [ ... ] }
-    },
+    reducer: createSliceResult, // thanks Redux Toolkit!
     selectors: {
       selectErrors: [Function],
       selectAll: [Function],
